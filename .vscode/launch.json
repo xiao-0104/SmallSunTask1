@@ -1,0 +1,26 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "C++ Debug",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}\\main.exe", 
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": true, // 建议设为 true，这样会弹出一个独立的黑窗口，方便处理输入输出
+            "MIMode": "gdb",
+            "miDebuggerPath": "D:\\minGW\\mingw64\\bin\\gdb.exe", // 这里要改成你安装 MinGW 的真实路径！
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "C/C++: g++.exe build active file" // 这个名字必须和 tasks.json 里的 label 一致
+        }
+    ]
+}
